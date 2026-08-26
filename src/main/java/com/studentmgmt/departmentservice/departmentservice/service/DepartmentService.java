@@ -25,5 +25,10 @@ public class DepartmentService {
         return deparmentRespository.findAll();
     }
 
+    public Department getDepartmentById(Long id){
+        return deparmentRespository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Department not found"));
+    }
+
     
 }
